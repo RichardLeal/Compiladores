@@ -1,0 +1,50 @@
+%{
+    #include <iostream>
+    #include <string>
+    using namespace std;
+    int yyylex();
+    int yyerror(string * msg);
+    
+%}
+
+%token KW_INT
+%token AAAA
+%token LIT_OCT
+%token IDENTIFIER
+
+%%
+
+program: ldefs
+    ;
+
+ldefs: def ldefs
+    | fundef
+    ;
+
+def: vardef
+    | fundef
+    ;
+
+vardef: KW_INT INDENTIFIER '=' LIT_OCT
+    ;
+
+fundef: AAAAA '(' ')' body
+    ;
+
+bpdy: '{' lcmd '}'
+
+block: '{' lcmd '}'
+    ;
+    
+lcmd: cmd lcmd
+    |
+    ;
+
+cmd: IDENTIFIER '=' LIT_OCT
+
+%%
+
+int yyerror(string *msg) {
+    fprintf(stderr, "error sintaxe\n");
+    exit(3);
+}

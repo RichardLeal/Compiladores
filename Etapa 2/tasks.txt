@@ -1,0 +1,7 @@
+SPEC E 2
+yeacc (bison)
+    - como fazer GLC/LISTAS
+--------------------------------
+ETAPA 3
+    yacc tech
+    AST
